@@ -1,1 +1,93 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="calc.css">
+    <title>Calculator created by: Erron</title>
+
+    <script>
+        function insert(num) {
+            document.form.textview.value = document.form.textview.value+num;
+        }
+        function equal () {
+            let exp = document.form.textview.value;
+            if(exp){                           
+            document.form.textview.value = eval(exp)
+            }
+        }
+        function clean () {
+            document.form.textview.value = "";
+        }
+        function back() {
+            let exp = document.form.textview.value;
+            document.form.textview.value = exp.substring(0,exp.length-1);
+        }
+        function kilometer () {
+            document.form.textview.value = document.form.textview.value * 0.0003048;
+        }
+        function meter () {
+            document.form.textview.value = document.form.textview.value * 0.3048;
+        }
+        function decimeter () {
+            document.form.textview.value = document.form.textview.value * 3.048;
+        }
+        function centimeter () {
+            document.form.textview.value = document.form.textview.value * 30.48;
+        }
+    </script>
+
+    </head>
+<body>
+
+    <div class="bg"></div>    
+    <div class="main">
+    <h1>Convert Feet to...</h1>
+    <h1>Kilometer</h1>
+    <h1>Meter</h1>
+    <h1>Decimeter</h1>
+    <h1>Centimeter</h1>
+
+        <form action="" name="form">
+            <input class="textview" type="text" name="textview">
+        </form>
+        <table>
+            <tr>
+                <td><input class="button" type="button" value="KM" onclick="kilometer()"></td>
+                <td><input class="button" type="button" value="M" onclick="meter()"></td>
+                <td><input class="button" type="button" value="DM" onclick="decimeter()"></td>
+                <td><input class="button" type="button" value="CM" onclick="centimeter()"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="C" onclick="clean()"></td>
+                <td><input class="button" type="button" value="<" onclick="back()"></td>
+                <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
+                <td><input class="button" type="button" value="x" onclick="insert('*')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="7" onclick="insert(7)"></td>
+                <td><input class="button" type="button" value="8" onclick="insert(8)"></td>
+                <td><input class="button" type="button" value="9" onclick="insert(9)"></td>
+                <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="4" onclick="insert(4)"></td>
+                <td><input class="button" type="button" value="5" onclick="insert(5)"></td>
+                <td><input class="button" type="button" value="6" onclick="insert(6)"></td>
+                <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+                <td><input class="button" type="button" value="2" onclick="insert(2)"></td>
+                <td><input class="button" type="button" value="3" onclick="insert(3)"></td>
+                <td rowspan=5><input class="button" style="height:110px" type="button" value="=" onclick="equal()"></td>
+            </tr>
+            <tr>
+                    <td colspan=2><input class="button" style="width: 110px" type="button" value="0" onclick="insert(0)"></td>
+                    <td><input class="button" type="button" value="." onclick="insert('.')"></td>
+                </tr>
+        </table>
+    </div>
+</body>
+</html>
